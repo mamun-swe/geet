@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className="footer">
-           <div className="container">
-               <div className="row">
-                   <div className="col-12 pt-2">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 pt-2">
                         <div className="d-flex flex-row-reverse">
                             <div>
                                 <Link to="/">Help</Link>
@@ -18,9 +18,9 @@ const Footer = () => {
                                 <Link to="/">Term of Use</Link>
                             </div>
                         </div>
-                   </div>
-               </div>
-           </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

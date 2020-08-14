@@ -97,7 +97,7 @@
 /* Footer */
 
 .footer {
-    padding-bottom: 40px;
+    padding-bottom: 120px;
     border-top: 1px solid #dfdfdf;
 }
 
@@ -114,6 +114,15 @@
 .footer .boder-link {
     border-left: 1px solid #555;
     border-right: 1px solid #555;
+}
+
+/* Player */
+
+.rhap_container {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 .flex-center {

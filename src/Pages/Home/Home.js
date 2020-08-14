@@ -5,6 +5,8 @@ import { Icon } from 'react-icons-kit';
 import { ic_navigate_next } from 'react-icons-kit/md/ic_navigate_next';
 import axios from 'axios';
 import api from '../../api';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 import PopularSongs from '../../Components/PopularSongs';
 import Categories from '../../Components/Categories';
@@ -14,6 +16,7 @@ import Footer from '../../Components/Footer';
 
 import girlImage from '../../assets/static/girl-music.png';
 import MobileAppUI from '../../assets/static/mobile_ui.png';
+import testSong from '../../assets/song.mp3';
 
 
 const Home = () => {
@@ -194,6 +197,14 @@ const Home = () => {
 
             {/* Footer */}
             <Footer />
+
+            {/* Player */}
+            <AudioPlayer
+                autoPlay
+                src={testSong}
+                onPlay={e => console.log("onPlay")}
+            // other props here
+            />
 
         </div>
     );
