@@ -139,7 +139,7 @@ const Home = () => {
                                     <h5 className="mt-1 mb-0">Albums</h5>
                                 </div>
                                 <div className="ml-auto">
-                                    <Link to="/">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
+                                    <Link to="/album">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
                                 </div>
                             </div>
                         </div>
