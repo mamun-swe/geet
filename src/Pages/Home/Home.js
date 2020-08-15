@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
+import { androidSearch } from 'react-icons-kit/ionicons/androidSearch';
 import { ic_navigate_next } from 'react-icons-kit/md/ic_navigate_next';
 import axios from 'axios';
 import api from '../../api';
-import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+// import Player from '../../Components/Player';
 
 import PopularSongs from '../../Components/PopularSongs';
 import Categories from '../../Components/Categories';
@@ -16,7 +16,7 @@ import Footer from '../../Components/Footer';
 
 import girlImage from '../../assets/static/girl-music.png';
 import MobileAppUI from '../../assets/static/mobile_ui.png';
-import testSong from '../../assets/song.mp3';
+// import testSong from '../../assets/song.mp3';
 
 
 const Home = () => {
@@ -24,21 +24,22 @@ const Home = () => {
 
 
     useEffect(() => {
+        // Fetch Categories
+        const fetchCategories = () => {
+            axios.get(`${api}users`)
+                .then(res => {
+                    setCategories(res.data)
+                })
+                .catch(err => {
+                    if (err) {
+                        console.log(err);
+                    }
+                })
+        }
         fetchCategories()
     }, [])
 
-    // Fetch Categories
-    const fetchCategories = () => {
-        axios.get(`${api}users`)
-            .then(res => {
-                setCategories(res.data)
-            })
-            .catch(err => {
-                if (err) {
-                    console.log(err);
-                }
-            })
-    }
+
 
     return (
         <div className="home">
@@ -62,7 +63,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-lg-8 m-auto">
-                            <div className="card border-0 shadow">
+                            <div className="card border-0">
                                 <div className="card-body">
                                     <p className="mb-0 text-unique">Find your favourite music</p>
                                     <form>
@@ -71,7 +72,9 @@ const Home = () => {
                                                 <input type="text" className="form-control shadow-none" placeholder="Search for music ( e.g. title, album )" />
                                             </div>
                                             <div>
-                                                <button type="submit" className="btn shadow-none text-white btn-unique">Search</button>
+                                                <button type="submit" className="btn shadow btn-search rounded-circle">
+                                                    <Icon icon={androidSearch} size={30} />
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
@@ -87,14 +90,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 cat-header mb-0 px-3">
-                            <div className="d-flex">
-                                <div>
-                                    <h5 className="mt-1 mb-0">popular songs</h5>
-                                </div>
-                                <div className="ml-auto">
-                                    <Link to="/">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
-                                </div>
-                            </div>
+                            <h5 className="mt-1 mb-0">popular songs</h5>
                         </div>
 
                         <div className="col-12 px-2">
@@ -114,7 +110,7 @@ const Home = () => {
                                     <h5 className="mt-1 mb-0">Categories</h5>
                                 </div>
                                 <div className="ml-auto">
-                                    <Link to="/">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
+                                    <Link to="/category">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +160,7 @@ const Home = () => {
                                     <h5 className="mt-1 mb-0">Singer</h5>
                                 </div>
                                 <div className="ml-auto">
-                                    <Link to="/">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
+                                    <Link to="/singer">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
                                 </div>
                             </div>
                         </div>
@@ -199,12 +195,7 @@ const Home = () => {
             <Footer />
 
             {/* Player */}
-            <AudioPlayer
-                autoPlay
-                src={testSong}
-                onPlay={e => console.log("onPlay")}
-            // other props here
-            />
+            {/* <Player song={testSong} /> */}
 
         </div>
     );

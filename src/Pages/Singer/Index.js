@@ -4,17 +4,17 @@ import api from '../../api';
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer';
 
-import AblumImg from '../../assets/album.jpg';
+import SingerImg from '../../assets/oyshee.jpg';
 
 const Index = () => {
-    const [albums, setAlbums] = useState([])
+    const [singers, setSingers] = useState([])
 
     useEffect(() => {
-        // Fetch Albums
-        const fetchAlbums = () => {
+        // Fetch Singers
+        const fetchSingers = () => {
             axios.get(`${api}users`)
                 .then(res => {
-                    setAlbums(res.data)
+                    setSingers(res.data)
                 })
                 .catch(err => {
                     if (err) {
@@ -22,7 +22,8 @@ const Index = () => {
                     }
                 })
         }
-        fetchAlbums()
+
+        fetchSingers()
     }, [])
 
 
@@ -34,18 +35,18 @@ const Index = () => {
                 <div className="row">
                     <div className="col-12 col-lg-8 m-auto text-center">
                         <div className="header">
-                            <h1 className="mb-4">Lorem Ipsum Album's</h1>
+                            <h1 className="mb-4">Lorem Ipsum singer</h1>
                             <p className="mb-0">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. </p>
                         </div>
                     </div>
 
                     <div className="col-12 mb-5 pb-lg-5">
-                        {/* Album card */}
-                        {albums.length > 0 && albums.map((album, i) =>
+                        {/* Singer card */}
+                        {singers.length > 0 && singers.map((singer, i) =>
                             <div className="card border-0 p-2 card" key={i}>
-                                <Link to={`/album/${album.id}/${album.name}`}>
+                                <Link to={`/singer/${singer.id}/${singer.name}`}>
                                     <div className="card-body border shadow-sm">
-                                        <img src={AblumImg} className="img-fluid" alt="..." />
+                                        <img src={SingerImg} className="img-fluid" alt="..." />
                                     </div>
                                     <p>kick as women</p>
                                 </Link>

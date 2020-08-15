@@ -8,7 +8,7 @@ const Categories = ({ categories }) => {
         <div>
             {categories.length > 0 && categories.map((category, i) =>
                 <div className="card item-card border-0" key={i}>
-                    <Link to="/">
+                    <Link to={`category/${category.id}/${category.name}`}>
                         <div className="card-body">
                             <img src={catImg} className="img-fluid" alt="..." />
                             <div className="overlay">

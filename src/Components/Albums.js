@@ -8,7 +8,7 @@ const Albums = ({ albums }) => {
         <div>
             {albums.length > 0 && albums.map((album, i) =>
                 <div className="card item-card border-0" key={i}>
-                    <Link to="/">
+                    <Link to={`/album/${album.id}/${album.name}`}>
                         <div className="card-body shadow-sm">
                             <img src={albumImg} className="img-fluid" alt="..." />
                             <div className="overlay">

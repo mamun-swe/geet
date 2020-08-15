@@ -7,7 +7,7 @@ const Singer = ({ singers }) => {
         <div>
             {singers.length > 0 && singers.map((singer, i) =>
                 <div className="card item-card border-0" key={i}>
-                    <Link to="/">
+                    <Link to={`/singer/${singer.id}/${singer.name}`}>
                         <div className="card-body shadow-sm">
                             <img src={sinerImg} className="img-fluid" alt="..." />
                             <div className="overlay">

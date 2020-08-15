@@ -39,6 +39,7 @@
 
 .home .search-box .card .card-body p {
     font-size: 13px;
+    padding-left: 20px;
     font-family: redRose-regular;
 }
 
@@ -46,14 +47,22 @@
     font-size: 13px;
     height: 38px;
     font-family: redRose-regular;
+    border-radius: 25px;
+    border: 0;
+    padding: 23px 20px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
 }
 
 .home .search-box .card .card-body .form-control:focus {
-    border: 1px solid rgb(214, 69, 86);
+    border: 0;
 }
 
-.home .search-box .card .card-body .btn {
+.home .search-box .card .card-body .btn-search {
+    color: #000;
     border-radius: 6px;
+    padding: 10px 8px;
+    height: 46px;
+    color: rgb(214, 69, 86);
 }
 
 /* Popular Songs */
