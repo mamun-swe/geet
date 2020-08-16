@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
-import { Icon } from 'react-icons-kit';
-import { androidSearch } from 'react-icons-kit/ionicons/androidSearch';
-import { ic_navigate_next } from 'react-icons-kit/md/ic_navigate_next';
 import axios from 'axios';
 import api from '../../api';
-// import Player from '../../Components/Player';
+import { Link } from 'react-router-dom';
+import { Icon } from 'react-icons-kit';
+import { ic_navigate_next } from 'react-icons-kit/md';
 
+// import Player from '../../Components/Player';
+import Search from '../../Components/SearchSong';
 import PopularSongs from '../../Components/PopularSongs';
 import Categories from '../../Components/Categories';
 import Albums from '../../Components/Albums';
 import Singer from '../../Components/Singer';
 import Footer from '../../Components/Footer';
+
 
 import girlImage from '../../assets/static/girl-music.png';
 import MobileAppUI from '../../assets/static/mobile_ui.png';
@@ -20,7 +21,8 @@ import MobileAppUI from '../../assets/static/mobile_ui.png';
 
 
 const Home = () => {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
+
 
 
     useEffect(() => {
@@ -65,19 +67,7 @@ const Home = () => {
                         <div className="col-12 col-lg-8 m-auto">
                             <div className="card border-0">
                                 <div className="card-body">
-                                    <p className="mb-0 text-unique">Find your favourite music</p>
-                                    <form>
-                                        <div className="d-flex">
-                                            <div className="flex-grow-1 pr-2">
-                                                <input type="text" className="form-control shadow-none" placeholder="Search for music ( e.g. title, album )" />
-                                            </div>
-                                            <div>
-                                                <button type="submit" className="btn shadow btn-search rounded-circle">
-                                                    <Icon icon={androidSearch} size={30} />
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <Search />
                                 </div>
                             </div>
                         </div>
