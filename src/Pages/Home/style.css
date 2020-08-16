@@ -64,25 +64,23 @@
     z-index: 9;
     top: 85px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-.home .search-box .card .card-body .suggest-box a .result {
+.home .search-box .card .card-body .suggest-box .result {
     color: rgb(68, 67, 67);
     transition: 0.3s;
     padding-top: 11px;
     padding-bottom: 11px;
 }
 
-.home .search-box .card .card-body .suggest-box a .result p {
+.home .search-box .card .card-body .suggest-box .result p {
     font-size: 15px;
     margin-top: 2px;
 }
 
-.home .search-box .card .card-body .suggest-box a:hover {
+.home .search-box .card .card-body .suggest-box .result:hover {
     text-decoration: none;
-}
-
-.home .search-box .card .card-body .suggest-box a:hover .result {
     background: #cfcece49 !important;
 }
 

@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { Icon } from 'react-icons-kit';
 import { androidSearch } from 'react-icons-kit/ionicons/androidSearch';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import api from '../api';
 import Loader from './Loader';
 
 import testImg from '../assets/cover.jpg';
 
-const SearchSong = () => {
+const SearchSong = (props) => {
     const { register, handleSubmit, errors } = useForm();
     const [suggestBox, setSuggestBox] = useState(false);
     const [isSearchLoading, setIsSearchLoading] = useState(false);
     const [results, setResults] = useState([]);
 
     // Submit Search
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        props.history.push(`/search-results?query=${data.filterdata}`)
+    }
 
     // on Change filter
     const onChnageSearch = event => {
@@ -41,6 +42,12 @@ const SearchSong = () => {
             setIsSearchLoading(false)
         }
     }
+
+    const handleClick = data => {
+        props.history.push(`/search-results?query=${data}`)
+    }
+
+
     return (
         <div>
             <p className="mb-0 text-unique">Find your favourite music</p>
@@ -52,7 +59,7 @@ const SearchSong = () => {
                             type="text"
                             onChange={onChnageSearch}
                             className={errors.filterdata ? "form-control shadow-none error" : "form-control shadow-none"}
-                            placeholder="Search for music ( e.g. title, album )"
+                            placeholder="Search for music ( e.g. Music title )"
                             ref={register({
                                 required: true
                             })}
@@ -67,19 +74,17 @@ const SearchSong = () => {
                                     </div>
                                 ) : null}
 
-                                {results && results.length > 0 ? (results.map((result, i) =>
-                                    <Link to="/">
-                                        <div className="result border-bottom" key={i}>
+                                {results && results.length > 0 ? (results.map((result) =>
+                                    <div className="result border-bottom" key={result.id} onClick={() => handleClick(result.name, props)}>
 
-                                            <div className="d-flex">
-                                                <div className="pl-2">
-                                                    <img src={testImg} className="rounded-circle" alt="..." />
-                                                </div>
-                                                <div className="pl-2"><p className="mb-0 pl-0">{result.name}</p></div>
+                                        <div className="d-flex">
+                                            <div className="pl-2">
+                                                <img src={testImg} className="rounded-circle" alt="..." />
                                             </div>
-
+                                            <div className="pl-2"><p className="mb-0 pl-0">{result.name}</p></div>
                                         </div>
-                                    </Link>
+
+                                    </div>
                                 )) :
                                     <div className="py-3">
                                         <p className="mb-0 text-unique">0 Song or Album found.</p>

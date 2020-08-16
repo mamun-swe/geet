@@ -1,0 +1,18 @@
+.tracks .track-box {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.tracks p {
+    color: #000;
+    font-size: 14px;
+    margin-top: 7px;
+    text-transform: capitalize;
+    font-family: redRose-light;
+}
+
+.search-index .header h1 span{
+    font-size: 18px;
+}

@@ -21,7 +21,7 @@ import MobileAppUI from '../../assets/static/mobile_ui.png';
 // import testSong from '../../assets/song.mp3';
 
 
-const Home = () => {
+const Home = (props) => {
     const [isLoading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
 
@@ -73,7 +73,7 @@ const Home = () => {
                                 <div className="col-12 col-lg-8 m-auto">
                                     <div className="card border-0">
                                         <div className="card-body">
-                                            <Search />
+                                            <Search {...props} />
                                         </div>
                                     </div>
                                 </div>

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Navbar from './Components/NavBar';
 import Home from './Pages/Home/Home';
+import SearchIndex from './Pages/Search/Index';
 import CategoryIndex from './Pages/Category/Index';
 import CategoryShow from './Pages/Category/Show';
 import AlbumIndex from './Pages/Album/Index';
@@ -17,9 +18,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar/>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/search-results" component={SearchIndex} />
           <Route exact path="/category" component={CategoryIndex} />
           <Route exact path="/category/:id/:name" component={CategoryShow} />
           <Route exact path="/album" component={AlbumIndex} />
