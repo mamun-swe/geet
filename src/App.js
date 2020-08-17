@@ -12,6 +12,9 @@ import AlbumIndex from './Pages/Album/Index';
 import AlbumShow from './Pages/Album/Show';
 import SingerIndex from './Pages/Singer/Index';
 import SingerShow from './Pages/Singer/Show';
+import TermOfUse from './Pages/Static/TermOfUse';
+import PrivacyPolicy from './Pages/Static/PrivacyPolicy';
+import Help from './Pages/Static/Help';
 
 
 function App() {
@@ -28,6 +31,9 @@ function App() {
           <Route exact path="/album/:id/:name" component={AlbumShow} />
           <Route exact path="/singer" component={SingerIndex} />
           <Route exact path="/singer/:id/:name" component={SingerShow} />
+          <Route exact path="/term" component={TermOfUse} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/help" component={Help} />
           <Route path="*">
             <h1 className="text-center mt-5"><b>404 Page not found</b></h1>
           </Route>
