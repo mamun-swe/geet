@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
 import { ic_dehaze, ic_close } from 'react-icons-kit/md';
 
@@ -36,22 +36,22 @@ const NavBar = () => {
                         {/* Mobile Menu */}
                         <div className={isOpen ? "menu mobile-menu d-lg-none open-sidebar" : "menu mobile-menu d-lg-none hide-sidebar"}>
                             <ul>
-                                <li><Link to="/">home</Link></li>
-                                <li><Link to="/category">categorie's</Link></li>
-                                <li><Link to="/album">album's</Link></li>
-                                <li><Link to="/singer">singer</Link></li>
-                                <li><Link to="/">mamun</Link></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/">home</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/category">categorie's</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/album">album's</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/singer">singer</NavLink></li>
+                                <li><NavLink activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/account">mamun</NavLink></li>
                             </ul>
                         </div>
 
                         {/* Desktop Menu */}
                         <div className="menu desktop-menu d-none d-lg-block text-right">
                             <ul>
-                                <li><Link to="/">home</Link></li>
-                                <li><Link to="/category">categorie's</Link></li>
-                                <li><Link to="/album">album's</Link></li>
-                                <li><Link to="/singer">singer</Link></li>
-                                <li><Link to="/">mamun</Link></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/">home</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/category">categorie's</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/album">album's</NavLink></li>
+                                <li><NavLink exact activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/singer">singer</NavLink></li>
+                                <li><NavLink activeStyle={{ color: "rgb(214, 69, 86)" }} activeClassName="isActive" to="/account">mamun</NavLink></li>
                             </ul>
                         </div>
                     </div>

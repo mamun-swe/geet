@@ -16,6 +16,8 @@ import TermOfUse from './Pages/Static/TermOfUse';
 import PrivacyPolicy from './Pages/Static/PrivacyPolicy';
 import Help from './Pages/Static/Help';
 
+// Account Routes
+import AccountMaster from './Pages/Account/Master';
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route exact path="/term" component={TermOfUse} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/help" component={Help} />
+          {/* Account */}
+          <Route path="/account" component={AccountMaster} />
           <Route path="*">
             <h1 className="text-center mt-5"><b>404 Page not found</b></h1>
           </Route>

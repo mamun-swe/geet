@@ -14,6 +14,7 @@ import Albums from '../../Components/Albums';
 import Singer from '../../Components/Singer';
 import Footer from '../../Components/Footer';
 import PageLoader from '../../Components/PageLoader';
+import Login from '../../Components/Modal/Auth';
 
 
 import girlImage from '../../assets/static/girl-music.png';
@@ -22,6 +23,7 @@ import MobileAppUI from '../../assets/static/mobile_ui.png';
 
 
 const Home = (props) => {
+    const [show, setShow] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
 
@@ -43,7 +45,10 @@ const Home = (props) => {
         fetchCategories()
     }, [])
 
-
+    // Hide Modal
+    const hideModal = () => {
+        setShow(false);
+    }
 
     return (
         <div className="home">
@@ -57,7 +62,7 @@ const Home = (props) => {
                             <div className="row">
                                 <div className="col-12 col-lg-7 text-center text-lg-left">
                                     <h1 className="text-dark">Geet Play</h1>
-                                    <button type="button" className="btn shadow-none btn-unique text-white">Login Account</button>
+                                    <button type="button" className="btn shadow-none btn-unique text-white" onClick={() => setShow(true)}>Login Account</button>
                                 </div>
                                 <div className="col-12 col-lg-5 d-none d-lg-block text-center">
                                     <img src={girlImage} alt="..." />
@@ -192,6 +197,8 @@ const Home = (props) => {
 
                     {/* Player */}
                     {/* <Player song={testSong} /> */}
+
+                    <Login show={show} onClose={hideModal} {...props} />
                 </div>
             }
         </div >
