@@ -1,0 +1,104 @@
+@import "../../../App.scss";
+
+/* Search Box */
+
+.search-container {
+    .card {
+        border-radius: 6px;
+
+        .card-body {
+            padding-top: 15px;
+            padding-bottom: 25px;
+
+            p {
+                font-size: 13px;
+                font-weight: 400;
+                padding-left: 20px;
+                font-family: 'Red Rose', cursive;
+            }
+
+            .form-control {
+                border: 0;
+                height: 38px;
+                font-size: 13px;
+                font-weight: 400;
+                padding: 23px 20px;
+                position: relative;
+                border-radius: 25px;
+                font-family: 'Red Rose', cursive;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+
+                &:focus {
+                    border: 0;
+                }
+            }
+
+            .btn-search {
+                color: #000;
+                border-radius: 6px;
+                padding: 10px 8px;
+                height: 46px;
+                color: rgb(214, 69, 86);
+            }
+
+            .suggest-container {
+                position: absolute;
+                background: #fff;
+                width: 78%;
+                height: 60px auto;
+                z-index: 9;
+                top: 85px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                .result {
+                    color: rgb(68, 67, 67);
+                    transition: 0.3s;
+                    padding-top: 11px;
+                    padding-bottom: 11px;
+
+                    p {
+                        font-size: 15px;
+                        margin-top: 2px;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                        background: #cfcece49 !important;
+                    }
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    left: 0px;
+                    width: 100%;
+                }
+
+                @media (min-width: 576px) {
+                    left: 37px;
+                    width: 380px;
+                }
+
+                @media (min-width: 768px) {
+                    width: 560px;
+                }
+
+                @media (min-width: 992px) {
+                    width: 480px;
+                }
+
+                @media (min-width: 1200px) {
+                    width: 600px;
+                }
+            }
+        }
+    }
+}
+
+.error {
+    border: 1px solid rgb(214, 69, 86) !important;
+}

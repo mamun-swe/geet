@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import api from '../../api';
 import { Link } from 'react-router-dom';
-import Footer from '../../Components/Footer';
-import PageLoader from '../../Components/PageLoader';
+import Footer from '../../components/Footer';
+import PageLoader from '../../components/PageLoader';
 
 import AblumImg from '../../assets/album.jpg';
 
@@ -28,8 +28,6 @@ const Index = () => {
         }
         fetchAlbums()
     }, [])
-
-
 
 
     return (

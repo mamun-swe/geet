@@ -1,0 +1,88 @@
+@import "../../../App.scss";
+
+.popular-songs {
+    padding-top: 50px;
+    position: relative;
+
+    h5 {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-family: 'Red Rose', cursive;
+    }
+
+    .song-slider {
+        overflow-x: hidden;
+
+        .card {
+            background: none;
+            padding: 10px;
+
+            a {
+                .card-body {
+                    padding: 0;
+                    height: 140px;
+                    overflow: hidden;
+                    background: #fff;
+                    border-radius: 8px;
+                    position: relative;
+                    border: 1px solid #dfdfdf;
+
+                    img {
+                        min-width: 100%;
+                        min-height: 100%;
+                    }
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: none;
+                    }
+
+                    &:hover .overlay {
+                        display: block;
+                        background: rgba(0, 0, 0, 0.562);
+                    }
+
+                    @media (min-width: 1480px) {
+                        height: 160px;
+                    }
+                }
+            }
+        }
+    }
+
+    .prev-btn {
+        left: 0;
+        top: 55px;
+        padding: 3px;
+        position: absolute;
+        background: #fff;
+        border: 1px solid #cfcece;
+
+        @media (min-width: 1480px) {
+            top: 65px;
+        }
+    }
+
+    .next-btn {
+        right: 0;
+        top: 55px;
+        padding: 3px;
+        position: absolute;
+        background: #fff;
+        border: 1px solid #cfcece;
+
+        @media (min-width: 1480px) {
+            top: 65px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../../App.scss";
+
+.footer {
+    padding-bottom: 120px;
+    padding-bottom: 40px;
+    border-top: 1px solid #dfdfdf;
+}
+
+.footer a {
+    font-size: 14px;
+    color: #555;
+    font-weight: 400;
+    font-family: 'Red Rose', cursive;
+}
+
+.footer a:hover {
+    color: rgb(214, 69, 86);
+}
+
+.footer .boder-link {
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+}

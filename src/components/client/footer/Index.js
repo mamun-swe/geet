@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import './style.scss'
+import { Link } from 'react-router-dom'
 
-const Footer = () => {
+const Index = () => {
     return (
         <div className="footer">
             <div className="container">
@@ -25,4 +26,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Index;

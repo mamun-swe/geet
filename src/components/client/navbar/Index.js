@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Icon } from 'react-icons-kit';
-import { ic_dehaze, ic_close } from 'react-icons-kit/md';
+import React, { useState, useEffect } from 'react'
+import './style.scss'
+import { Icon } from 'react-icons-kit'
+import { NavLink } from 'react-router-dom'
+import { ic_dehaze, ic_close } from 'react-icons-kit/md'
 
-const NavBar = () => {
+const Index = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(true);
 
@@ -61,4 +62,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default Index;

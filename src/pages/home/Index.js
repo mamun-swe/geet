@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+import './style.scss';
 import axios from 'axios';
 import api from '../../api';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit';
 import { ic_navigate_next } from 'react-icons-kit/md';
 
-// import Player from '../../Components/Player';
-import Search from '../../Components/SearchSong';
-import PopularSongs from '../../Components/PopularSongs';
-import Categories from '../../Components/Categories';
-import Albums from '../../Components/Albums';
-import Singer from '../../Components/Singer';
-import Footer from '../../Components/Footer';
-import PageLoader from '../../Components/PageLoader';
-import Login from '../../Components/Modal/Auth';
+// import Player from '../../components/Player';
+import SearchComponent from '../../components/client/search/Index'
+import Popular from '../../components/client/popular-songs/Index'
+import CategoryList from '../../components/client/category-list/Index'
+import AlbumList from '../../components/client/album-list/Index'
+import SingerList from '../../components/client/singer-list/Index'
+import FooterComponent from '../../components/client/footer/Index'
+import PageLoader from '../../components/PageLoader';
+// import Login from '../../components/Modal/Auth';
 
 
 import girlImage from '../../assets/static/girl-music.png';
 import MobileAppUI from '../../assets/static/mobile_ui.png';
-// import testSong from '../../assets/song.mp3';
+import testSong from '../../assets/song.mp3';
 
 
-const Home = (props) => {
+const Home = () => {
     const [show, setShow] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
@@ -71,41 +71,18 @@ const Home = (props) => {
                         </div>
                     </div>
 
-                    {/* Search Box */}
-                    <div className="search-box">
+                    {/* Search component */}
+                    <SearchComponent />
+
+                    {/* Popular songs */}
+                    <Popular songs={categories} />
+
+
+                    {/* Category section */}
+                    <div className="category-section">
                         <div className="container">
                             <div className="row">
-                                <div className="col-12 col-lg-8 m-auto">
-                                    <div className="card border-0">
-                                        <div className="card-body">
-                                            <Search {...props} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Popular Songs */}
-                    <div className="popular-songs">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-12 cat-header mb-0 px-3">
-                                    <h5 className="mt-1 mb-0">popular songs</h5>
-                                </div>
-
-                                <div className="col-12 px-2">
-                                    <PopularSongs songs={categories} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Category */}
-                    <div className="categories">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-12 cat-header mb-0 px-3">
+                                <div className="col-12 category-header mb-0 px-3">
                                     <div className="d-flex">
                                         <div>
                                             <h5 className="mt-1 mb-0">Categories</h5>
@@ -118,7 +95,7 @@ const Home = (props) => {
 
                                 {/* Items */}
                                 <div className="col-12 px-2">
-                                    <Categories categories={categories} />
+                                    <CategoryList categories={categories} />
                                 </div>
 
                             </div>
@@ -126,11 +103,11 @@ const Home = (props) => {
                     </div>
 
 
-                    {/* Albums */}
-                    <div className="albums">
+                    {/* Album section */}
+                    <div className="album-section">
                         <div className="container">
                             <div className="row">
-                                <div className="col-12 cat-header mb-0">
+                                <div className="col-12 album-header mb-0">
                                     <div className="d-flex">
                                         <div>
                                             <h5 className="mt-1 mb-0">Albums</h5>
@@ -143,7 +120,7 @@ const Home = (props) => {
 
                                 {/* Items */}
                                 <div className="col-12 px-2">
-                                    <Albums albums={categories} />
+                                    <AlbumList albums={categories} />
                                 </div>
 
                             </div>
@@ -151,11 +128,11 @@ const Home = (props) => {
                     </div>
 
 
-                    {/* Singer */}
-                    <div className="singer">
+                    {/* Singer section */}
+                    <div className="singer-section">
                         <div className="container">
                             <div className="row">
-                                <div className="col-12 cat-header mb-0">
+                                <div className="col-12 singer-header mb-0">
                                     <div className="d-flex">
                                         <div>
                                             <h5 className="mt-1 mb-0">Singer</h5>
@@ -168,7 +145,7 @@ const Home = (props) => {
 
                                 {/* Items */}
                                 <div className="col-12 px-2">
-                                    <Singer singers={categories} />
+                                    <SingerList singers={categories} />
                                 </div>
 
                             </div>
@@ -176,8 +153,8 @@ const Home = (props) => {
                     </div>
 
 
-                    {/* Download App */}
-                    <div className="download-app">
+                    {/* App download section */}
+                    <div className="app-download-section">
                         <div className="container">
                             <div className="row">
                                 <div className="col-12 col-lg-6 content">
@@ -192,13 +169,13 @@ const Home = (props) => {
                     </div>
 
 
-                    {/* Footer */}
-                    <Footer />
+                    {/* Footer component */}
+                    <FooterComponent />
 
                     {/* Player */}
                     {/* <Player song={testSong} /> */}
 
-                    <Login show={show} onClose={hideModal} {...props} />
+                    {/* <Login show={show} onClose={hideModal} {...props} /> */}
                 </div>
             }
         </div >
