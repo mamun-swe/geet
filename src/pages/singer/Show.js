@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react'
-import './style.scss'
 import axios from 'axios'
-import {api} from '../../utils/api'
+import api from '../../api'
 import { Icon } from 'react-icons-kit'
 import { useParams } from 'react-router-dom'
+import PreLoader from '../../components/preloader/Index'
 import { music_play_button } from 'react-icons-kit/linea'
 import FooterComponent from '../../components/client/footer/Index'
-import PreLoader from '../../components/preloader/Index'
 // import Player from '../../Components/Player';
 
-import ProfileImg from '../../assets/cover.jpg';
+import ProfileImg from '../../assets/oyshee.jpg'
 
 const Show = () => {
     const { slug } = useParams()
-    const [isLoading, setLoading] = useState(true)
+    const [isLoading, setLoading] = useState(false)
     const [tracks, setTracks] = useState([])
 
     useEffect(() => {
         // Fetch Tracks
         const fetchMusicTracks = async () => {
             try {
-                const response = await axios.get(`${api}list?page=5&limit=35`)
+                const response = await axios.get(`${api}posts`)
                 if (response.status === 200) {
                     setTracks(response.data)
                     setLoading(false)
@@ -39,7 +38,6 @@ const Show = () => {
             <PreLoader />
         )
     }
-
 
     return (
         <div className="show">

@@ -8,9 +8,9 @@ const Index = ({ singers }) => {
         <div>
             {singers.length > 0 && singers.map((singer, i) =>
                 <div className="card singer-item border-0" key={i}>
-                    <Link to={`/singer/${singer.id}/${singer.name}`}>
+                    <Link to={`/singer/${singer.title}`}>
                         <div className="card-body shadow-sm">
-                            <img src={sinerImg} className="img-fluid" alt="..." />
+                            <img src={singer.download_url} className="img-fluid" alt="..." />
                             <div className="overlay"></div>
                         </div>
                     </Link>

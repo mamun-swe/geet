@@ -6,11 +6,11 @@ import Navbar from './components/client/navbar/Index';
 import Home from './pages/home/Index';
 // import SearchIndex from './Pages/Search/Index';
 import CategoryIndex from './pages/category/Index'
-// import CategoryShow from './Pages/Category/Show';
-// import AlbumIndex from './Pages/Album/Index';
-// import AlbumShow from './Pages/Album/Show';
-// import SingerIndex from './Pages/Singer/Index';
-// import SingerShow from './Pages/Singer/Show';
+import CategoryShow from './pages/category/Show'
+import AlbumIndex from './pages/album/Index'
+import AlbumShow from './pages/album/Show'
+import SingerIndex from './pages/singer/Index'
+import SingerShow from './pages/singer/Show'
 // import TermOfUse from './Pages/Static/TermOfUse';
 // import PrivacyPolicy from './Pages/Static/PrivacyPolicy';
 // import Help from './Pages/Static/Help';
@@ -25,14 +25,14 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-         {/* <Route exact path="/search-results" component={SearchIndex} /> */}
+          {/* <Route exact path="/search-results" component={SearchIndex} /> */}
           <Route exact path="/category" component={CategoryIndex} />
-          {/*  <Route exact path="/category/:id/:name" component={CategoryShow} />
+          <Route exact path="/category/:slug" component={CategoryShow} />
           <Route exact path="/album" component={AlbumIndex} />
-          <Route exact path="/album/:id/:name" component={AlbumShow} />
+          <Route exact path="/album/:slug" component={AlbumShow} />
           <Route exact path="/singer" component={SingerIndex} />
-          <Route exact path="/singer/:id/:name" component={SingerShow} />
-          <Route exact path="/term" component={TermOfUse} />
+          <Route exact path="/singer/:slug" component={SingerShow} />
+          {/*   <Route exact path="/term" component={TermOfUse} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/help" component={Help} />
     

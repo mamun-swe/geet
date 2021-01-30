@@ -9,9 +9,9 @@ const Index = ({ categories }) => {
         <div>
             {categories.length > 0 && categories.map((category, i) =>
                 <div className="card category-item border-0" key={i}>
-                    <Link to={`category/${category.id}/${category.name}`}>
+                    <Link to={`category/${category.title}`}>
                         <div className="card-body">
-                            <img src={catImg} className="img-fluid" alt="..." />
+                            <img src={category.download_url} className="img-fluid" alt="..." />
                             <div className="overlay"></div>
                         </div>
                     </Link>

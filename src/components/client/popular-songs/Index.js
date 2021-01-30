@@ -9,8 +9,6 @@ import {
 } from 'react-icons-kit/md'
 import { play } from 'react-icons-kit/fa'
 
-import albumImg from '../../../assets/album.jpg'
-
 const Index = ({ songs }) => {
     const customeSlider = useRef()
 
@@ -79,7 +77,7 @@ const Index = ({ songs }) => {
                                     <div className="card border-0 p-2" key={i}>
                                         <Link to="/">
                                             <div className="card-body border">
-                                                <img src={albumImg} className="img-fluid" alt="..." />
+                                                <img src={song.download_url} className="img-fluid" alt="..." />
                                                 <div className="overlay">
                                                     <div className="flex-center flex-column">
                                                         <Icon size={30} className="icon" icon={play} style={{ color: '#fff' }} />

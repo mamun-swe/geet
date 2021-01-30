@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {api} from '../../utils/api'
-import CategoryList from '../../components/client/category-list/Index'
+import api from '../../api'
+
+import AlbumList from '../../components/client/album-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
 import PreLoader from '../../components/preloader/Index'
 
 const Index = () => {
     const [isLoading, setLoading] = useState(true)
-    const [categories, setCategories] = useState([])
+    const [albums, setAlbums] = useState([])
 
     useEffect(() => {
-        // Fetch Categories
-        const fetchCategories = async () => {
+        // Fetch Albums
+        const fetchAlbums = async () => {
             try {
-                const response = await axios.get(`${api}list?page=3&limit=42`)
+                const response = await axios.get(`${api}posts`)
                 if (response.status === 200) {
+                    setAlbums(response.data)
                     setLoading(false)
-                    setCategories(response.data)
                 }
             } catch (error) {
-                if (error) {
-                    console.log(error.response)
-                }
+                if (error) console.log(error.response)
             }
         }
-        fetchCategories()
+        fetchAlbums()
     }, [])
-
 
     if (isLoading) {
         return (
@@ -39,7 +37,7 @@ const Index = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12 p-2">
-                        <CategoryList categories={categories} />
+                        <AlbumList albums={albums} />
                     </div>
                 </div>
             </div>
