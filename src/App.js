@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Navbar from './components/client/navbar/Index';
-import Home from './pages/home/Index';
-// import SearchIndex from './Pages/Search/Index';
+import Navbar from './components/client/navbar/Index'
+import Home from './pages/home/Index'
+import SearchIndex from './pages/search/Index'
 import CategoryIndex from './pages/category/Index'
 import CategoryShow from './pages/category/Show'
 import AlbumIndex from './pages/album/Index'
@@ -16,7 +16,7 @@ import SingerShow from './pages/singer/Show'
 // import Help from './Pages/Static/Help';
 
 // Account Routes
-// import AccountMaster from './Pages/Account/Master';
+import AccountMaster from './pages/account/Master'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/search-results" component={SearchIndex} /> */}
+          <Route exact path="/search-results" component={SearchIndex} />
           <Route exact path="/category" component={CategoryIndex} />
           <Route exact path="/category/:slug" component={CategoryShow} />
           <Route exact path="/album" component={AlbumIndex} />
@@ -35,11 +35,12 @@ function App() {
           {/*   <Route exact path="/term" component={TermOfUse} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/help" component={Help} />
-    
+    */}
+
           <Route path="/account" component={AccountMaster} />
           <Route path="*">
             <h1 className="text-center mt-5"><b>404 Page not found</b></h1>
-          </Route> */}
+          </Route>
         </Switch>
       </Router>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import api from '../../api'
+import {api} from '../../utils/api'
 import SingerList from '../../components/client/singer-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
 import PreLoader from '../../components/preloader/Index'
@@ -14,7 +14,7 @@ const Index = () => {
         // Fetch Singers
         const fetchSingers = async () => {
             try {
-                const response = await axios.get(`${api}posts`)
+                const response = await axios.get(`${api}list?page=3&limit=42`)
                 if (response.status === 200) {
                     setSingers(response.data)
                     setLoading(false)

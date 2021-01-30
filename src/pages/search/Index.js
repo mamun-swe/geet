@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import './style.css';
-import axios from 'axios';
-import api from '../../api';
-import { Icon } from 'react-icons-kit';
-import { music_play_button } from 'react-icons-kit/linea/music_play_button';
-import queryString from 'query-string';
-import Footer from '../../Components/Footer';
-import PageLoader from '../../Components/PageLoader';
+import React, { useEffect, useState } from 'react'
+import './style.scss'
+import axios from 'axios'
+import api from '../../api'
+import { Icon } from 'react-icons-kit'
+import { useLocation } from 'react-router-dom'
+import { music_play_button } from 'react-icons-kit/linea'
+import Footer from '../../components/client/footer/Index'
+import PageLoader from '../../components/preloader/Index'
 
-const Index = (props) => {
+function useQuery() {
+    return new URLSearchParams(useLocation().search)
+}
+
+const Index = () => {
+    let query = useQuery()
     const [isLoading, setLoading] = useState(false);
     const [tracks, setTracks] = useState([]);
 
     useEffect(() => {
-        let params = queryString.parse(props.location.search).query
-        console.log(params);
-
         // Fetch Tracks
         setLoading(true)
         const fetchTracks = () => {
@@ -44,7 +46,7 @@ const Index = (props) => {
                         <div className="row">
                             <div className="col-12 col-lg-8 m-auto text-center">
                                 <div className="header">
-                                    <h1 className="mb-4"><span>You search for</span> <br /> {queryString.parse(props.location.search).query}</h1>
+                                    <h1 className="mb-4"><span>You search for</span> <br /> {query.get('query')}</h1>
                                 </div>
                             </div>
 
