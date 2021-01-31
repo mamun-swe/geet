@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {api} from '../../utils/api'
+import { api } from '../../utils/api'
 
 import AlbumList from '../../components/client/album-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
-import PreLoader from '../../components/preloader/Index'
 
 const Index = () => {
     const [isLoading, setLoading] = useState(true)
@@ -26,18 +25,12 @@ const Index = () => {
         fetchAlbums()
     }, [])
 
-    if (isLoading) {
-        return (
-            <PreLoader />
-        )
-    }
-
     return (
         <div className="index">
             <div className="container">
                 <div className="row">
                     <div className="col-12 p-2">
-                        <AlbumList albums={albums} />
+                        <AlbumList albums={albums} loading={isLoading} loaderitem={18} />
                     </div>
                 </div>
             </div>

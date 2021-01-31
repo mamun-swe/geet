@@ -4,7 +4,7 @@ import { Icon } from 'react-icons-kit';
 import { ic_history, ic_person, ic_power_settings_new } from 'react-icons-kit/md';
 import { undo } from 'react-icons-kit/iconic/undo';
 
-const AccountSIdeMenu = (props) => {
+const Index = (props) => {
     return (
         <div className={props.show ? "menu shadow open-menu" : "menu shadow"}>
             <NavLink exact to="/account/" activeClassName="is-Active"><Icon icon={undo} size={20} className="mr-2" />recently played</NavLink>
@@ -15,4 +15,4 @@ const AccountSIdeMenu = (props) => {
     );
 };
 
-export default AccountSIdeMenu;
+export default Index;

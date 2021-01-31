@@ -13,13 +13,12 @@ import CategoryList from '../../components/client/category-list/Index'
 import AlbumList from '../../components/client/album-list/Index'
 import SingerList from '../../components/client/singer-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
-import PreLoader from '../../components/preloader/Index'
-// import Login from '../../components/Modal/Auth';
+import Login from '../../components/Modal/Auth'
 
 
-import girlImage from '../../assets/static/girl-music.png';
-import MobileAppUI from '../../assets/static/mobile_ui.png';
-import testSong from '../../assets/song.mp3';
+import girlImage from '../../assets/static/girl-music.png'
+import MobileAppUI from '../../assets/static/mobile_ui.png'
+// import testSong from '../../assets/song.mp3'
 
 
 const Home = () => {
@@ -46,15 +45,7 @@ const Home = () => {
     }, [])
 
     // Hide Modal
-    const hideModal = () => {
-        setShow(false);
-    }
-
-    if (isLoading) {
-        return (
-            <PreLoader />
-        )
-    }
+    const hideModal = () => setShow(false)
 
     return (
         <div className="home">
@@ -78,7 +69,7 @@ const Home = () => {
                 <SearchComponent />
 
                 {/* Popular songs */}
-                <Popular songs={categories} />
+                <Popular songs={categories} loading={isLoading} />
 
 
                 {/* Category section */}
@@ -88,7 +79,7 @@ const Home = () => {
                             <div className="col-12 category-header mb-0 px-3">
                                 <div className="d-flex">
                                     <div>
-                                        <h5 className="mt-1 mb-0">Categories</h5>
+                                        <h5 className="mt-1 mb-0 ml-2">Categories</h5>
                                     </div>
                                     <div className="ml-auto">
                                         <Link to="/category">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
@@ -98,7 +89,7 @@ const Home = () => {
 
                             {/* Items */}
                             <div className="col-12 px-2">
-                                <CategoryList categories={categories} />
+                                <CategoryList categories={categories} loading={isLoading} />
                             </div>
 
                         </div>
@@ -113,7 +104,7 @@ const Home = () => {
                             <div className="col-12 album-header mb-0">
                                 <div className="d-flex">
                                     <div>
-                                        <h5 className="mt-1 mb-0">Albums</h5>
+                                        <h5 className="mt-1 mb-0 ml-2">Albums</h5>
                                     </div>
                                     <div className="ml-auto">
                                         <Link to="/album">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
@@ -123,7 +114,7 @@ const Home = () => {
 
                             {/* Items */}
                             <div className="col-12 px-2">
-                                <AlbumList albums={categories} />
+                                <AlbumList albums={categories} loading={isLoading} />
                             </div>
 
                         </div>
@@ -138,7 +129,7 @@ const Home = () => {
                             <div className="col-12 singer-header mb-0">
                                 <div className="d-flex">
                                     <div>
-                                        <h5 className="mt-1 mb-0">Singer</h5>
+                                        <h5 className="mt-1 mb-0 ml-2">Singer</h5>
                                     </div>
                                     <div className="ml-auto">
                                         <Link to="/singer">View All <Icon icon={ic_navigate_next} size={20} className="ml-2" /></Link>
@@ -148,7 +139,7 @@ const Home = () => {
 
                             {/* Items */}
                             <div className="col-12 px-2">
-                                <SingerList singers={categories} />
+                                <SingerList singers={categories} loading={isLoading} />
                             </div>
 
                         </div>
@@ -178,7 +169,7 @@ const Home = () => {
                 {/* Player */}
                 {/* <Player song={testSong} /> */}
 
-                {/* <Login show={show} onClose={hideModal} {...props} /> */}
+                <Login show={show} onClose={hideModal} />
             </div>
 
         </div >

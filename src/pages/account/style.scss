@@ -1,0 +1,109 @@
+@import "../../App.scss";
+
+.account {
+    .setting-btn {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        z-index: 99;
+        height: 43px;
+        width: 43px;
+    }
+
+    .side-menu {
+        .menu {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+
+            .is-Active {
+                background: #dfdfdf50;
+                color: rgb(214, 69, 86);
+            }
+
+            a {
+                display: block;
+                text-transform: capitalize;
+                padding: 10px 15px;
+                color: #555;
+                font-size: 14px;
+                text-decoration: none;
+                transition: 0.3s;
+                font-weight: 400;
+                font-family: "Red Rose", cursive;
+
+                &:hover {
+                    background: #dfdfdf50;
+                }
+            }
+        }
+    }
+
+    .main {
+        .profile {
+            h6 {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: "Red Rose", cursive;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                font-family: "Red Rose", cursive;
+            }
+        }
+
+        h5 {
+            font-weight: 400;
+            font-family: "Red Rose", cursive;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .account .side-menu .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fff;
+        z-index: 9;
+        transition: 0.6s all;
+    }
+
+    /* Open menu */
+    .open-menu {
+        left: 0 !important;
+    }
+
+    /* Hide menu */
+    .hide-menu {
+        left: -100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .account .side-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: none;
+        padding: 10px;
+        padding-top: 75px;
+    }
+
+    .account .side-menu .menu {
+        background: #fff;
+
+        /* border: 1px solid #dfdfdf83; */
+    }
+
+    .account .main {
+        margin-left: 250px;
+    }
+}
