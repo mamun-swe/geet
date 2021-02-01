@@ -4,10 +4,11 @@ import { Switch, Route } from 'react-router-dom'
 import { Icon } from 'react-icons-kit'
 import { ic_settings, ic_close } from 'react-icons-kit/md'
 
-import SideMenu from '../../components/account/sidemenu/Index'
 import Dashboard from './dashboard/Index'
 import HistoryIndex from './history/Index'
 import ProfileIndex from './profile/Index'
+import Navbar from '../../components/client/navbar/Index'
+import SideMenu from '../../components/account/sidemenu/Index'
 
 const Master = () => {
     const [show, setShow] = useState(false)
@@ -17,6 +18,7 @@ const Master = () => {
 
     return (
         <div className="account">
+            <Navbar />
             <div className="d-flex">
                 <div className="side-menu">
                     <SideMenu show={show} />

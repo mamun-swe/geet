@@ -1,6 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 $primary: rgb(214, 69, 86);
+$secondary: #555;
+$muted: #dfdfdfc9;
+$dashboard: #ff5733;
 
 /* Flex Box */
 
@@ -53,14 +56,6 @@ $primary: rgb(214, 69, 86);
 
 // .text-unique {
 //     color: rgb(214, 69, 86);
-// }
-
-// .btn-unique {
-//     color: #fff;
-//     text-transform: capitalize;
-//     font-family: redRose-regular;
-//     background: rgb(214, 69, 86);
-//     background: linear-gradient(127deg, rgba(214, 69, 86, 1) 39%, rgba(214, 69, 86, 1) 95%);
 // }
 
 // /* Navbar */
@@ -173,8 +168,6 @@ $primary: rgb(214, 69, 86);
 //     }
 // }
 
-
-
 // /* End Another Pages */
 
 // /* Player */
@@ -185,4 +178,3 @@ $primary: rgb(214, 69, 86);
 //     left: 0;
 //     bottom: 0;
 // }
-

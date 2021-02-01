@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { api } from '../../utils/api'
+
+import Navbar from '../../components/client/navbar/Index'
 import SingerList from '../../components/client/singer-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
 
@@ -28,6 +30,7 @@ const Index = () => {
 
     return (
         <div className="index">
+            <Navbar />
             <div className="container">
                 <div className="row">
                     <div className="col-12 p-2">

@@ -5,6 +5,8 @@ import {api} from '../../utils/api'
 import { Icon } from 'react-icons-kit'
 import { useParams } from 'react-router-dom'
 import { music_play_button } from 'react-icons-kit/linea'
+
+import Navbar from '../../components/client/navbar/Index'
 import FooterComponent from '../../components/client/footer/Index'
 import PreLoader from '../../components/preloader/Index'
 // import Player from '../../Components/Player';
@@ -43,6 +45,7 @@ const Show = () => {
 
     return (
         <div className="show">
+            <Navbar/>
             <div>
                 <div className="header">
                     <div className="overlay">

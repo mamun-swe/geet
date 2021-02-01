@@ -13,7 +13,8 @@ import CategoryList from '../../components/client/category-list/Index'
 import AlbumList from '../../components/client/album-list/Index'
 import SingerList from '../../components/client/singer-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
-import Login from '../../components/Modal/Auth'
+import AuthModal from '../../components/modal/auth/Index'
+import Navbar from '../../components/client/navbar/Index'
 
 
 import girlImage from '../../assets/static/girl-music.png'
@@ -22,6 +23,7 @@ import MobileAppUI from '../../assets/static/mobile_ui.png'
 
 
 const Home = () => {
+    const windowWidth = window.innerWidth
     const [show, setShow] = useState(false)
     const [isLoading, setLoading] = useState(true)
     const [categories, setCategories] = useState([])
@@ -30,7 +32,7 @@ const Home = () => {
         // Fetch Items
         const fetchItems = async () => {
             try {
-                const response = await axios.get(`${api}list?page=2&limit=21`)
+                const response = await axios.get(`${api}list?page=2&limit=${windowWidth > 1480 ? 21 : 18}`)
                 if (response.status === 200) {
                     setCategories(response.data)
                     setLoading(false)
@@ -49,6 +51,7 @@ const Home = () => {
 
     return (
         <div className="home">
+            <Navbar />
             <div>
                 {/* header */}
                 < div className="header">
@@ -169,7 +172,7 @@ const Home = () => {
                 {/* Player */}
                 {/* <Player song={testSong} /> */}
 
-                <Login show={show} onClose={hideModal} />
+                <AuthModal show={show} onClose={hideModal} />
             </div>
 
         </div >

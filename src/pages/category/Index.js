@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { api } from '../../utils/api'
 
+import Navbar from '../../components/client/navbar/Index'
 import CategoryList from '../../components/client/category-list/Index'
 import FooterComponent from '../../components/client/footer/Index'
 
@@ -27,9 +28,10 @@ const Index = () => {
         fetchCategories()
     }, [])
 
-    // When API loading end
+    
     return (
         <div className="index">
+            <Navbar />
             <div className="container">
                 <div className="row">
                     <div className="col-12 p-2">

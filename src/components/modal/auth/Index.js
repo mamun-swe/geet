@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import './style.css';
-import { Icon } from 'react-icons-kit';
-import { ic_keyboard_arrow_left } from 'react-icons-kit/md';
-import Modal from 'react-bootstrap/Modal';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react'
+import './style.scss'
+import { Icon } from 'react-icons-kit'
+import Modal from 'react-bootstrap/Modal'
+import { useForm } from 'react-hook-form'
+import { ic_keyboard_arrow_left } from 'react-icons-kit/md'
+import { useHistory } from 'react-router-dom'
 
-const Login = (props) => {
-    const { register, handleSubmit, errors } = useForm();
-    const [isLogin, setIsLogin] = useState(true);
-    const [isReg, setIsReg] = useState(false);
-    const [isReset, setIsReset] = useState(false);
-    const [loading, setLoading] = useState(false);
+const Index = (props) => {
+    const { register, handleSubmit, errors } = useForm()
+    const history = useHistory()
+    const [isLogin, setIsLogin] = useState(true)
+    const [isReg, setIsReg] = useState(false)
+    const [isReset, setIsReset] = useState(false)
+    const [loading, setLoading] = useState(false)
 
 
     const openRegister = () => {
@@ -35,20 +37,20 @@ const Login = (props) => {
     // Submit Login
     const onSubmit = data => {
         setLoading(true)
-        console.log('login' + data);
-        props.history.push('/account')
+        console.log('login' + data)
+        history.push('/admin')
     }
 
     // Submit Register
     const onSubmitRegister = data => {
         setLoading(true)
-        console.log('register ' + data.email);
+        console.log('register ' + data.email)
     }
 
     // Submit Reset
     const onSubmitReset = data => {
         setLoading(true)
-        console.log('Reset ' + data.email);
+        console.log('Reset ' + data.email)
     }
 
     return (
@@ -262,4 +264,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export default Index;
