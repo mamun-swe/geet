@@ -1,0 +1,46 @@
+@import "../../../App.scss";
+
+.category-list {
+    .table {
+        thead {
+            tr {
+                td {
+                    font-size: 13px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    font-size: 13px;
+                    font-weight: 400;
+
+                    ul {
+                        width: 110px;
+                        padding: 0;
+                        margin: auto !important;
+
+                        li {
+                            float: left;
+                            list-style: none;
+
+                            .btn {
+                                color: $dashboard-primary;
+                                padding: 3px 5px;
+                                margin-left: 5px;
+                                background: $muted;
+
+                                &:hover {
+                                    color: #fff;
+                                    background: $dashboard-primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -55,8 +55,20 @@
     }
 
     .body {
+        .details {
+            p {
+                color: #555;
+                font-size: 13px;
+                font-weight: 400;
+                margin-bottom: 0;
+                line-height: 1.5rem;
+                font-family: "Red Rose", cursive;
+            }
+        }
+
         .title {
             border-bottom: 1px solid #dfdfdf;
+
             p {
                 color: #555;
                 font-size: 15px;

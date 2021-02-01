@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 import { ic_add } from 'react-icons-kit/md'
 import { handleError } from '../../../utils/Error'
 
+import CategoryList from '../../../components/admin/category-list/Index'
+import LoadingComponent from '../../../components/admin/loading/Index'
+
 const Index = () => {
     const [categories, setCategories] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -18,7 +21,7 @@ const Index = () => {
                 const response = await axios.get(`${api}users`)
                 if (response.status === 200) {
                     setCategories(response.data)
-                    // setLoading(false)
+                    setLoading(false)
                 }
             } catch (error) {
                 if (error) {
@@ -32,13 +35,17 @@ const Index = () => {
 
     return (
         <div className="category-index">
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12">
-
+            {isLoading ? <LoadingComponent /> :
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-12 col-padding">
+                            <div className="card border-0 shadow-sm">
+                                <CategoryList categories={categories} />
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
 
             {/* Float create button */}
             <Link

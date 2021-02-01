@@ -60,6 +60,14 @@ const Show = () => {
             <div className="body py-4">
                 <div className="container pb-5">
                     <div className="row">
+                        {/* Details of singer */}
+                        <div className="col-12 col-lg-6 details mb-4">
+                            <p>Name: dummy name</p>
+                            <p>Album: 50</p>
+                            <p>Song: 50</p>
+                            <p>Description: Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+                        </div>
+
                         <div className="col-12">
                             <div className="title pb-2">
                                 <p className="mb-0">{tracks.length} Tracks</p>
