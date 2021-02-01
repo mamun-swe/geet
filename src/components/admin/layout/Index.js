@@ -6,7 +6,7 @@ import { NavLink, useHistory } from 'react-router-dom'
 import Icon from 'react-icons-kit'
 import {
     ic_dashboard,
-    ic_view_list,
+    ic_library_books,
     ic_library_music,
     ic_queue_music,
     ic_people,
@@ -91,15 +91,15 @@ const Layout = () => {
                             ><Icon icon={ic_dashboard} size={20} />Dashboard</NavLink>
                         </li>
 
-                        {/* Categories */}
+                        {/* category */}
                         <li>
                             <NavLink
                                 exact
-                                to="/admin/categories"
+                                to="/admin/category"
                                 activeClassName="isActive"
                                 type="button"
                                 className="btn shadow-none"
-                            ><Icon icon={ic_view_list} size={20} />Categories</NavLink>
+                            ><Icon icon={ic_library_books} size={20} />Category</NavLink>
                         </li>
 
                         {/* Albums */}
