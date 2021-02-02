@@ -2,6 +2,7 @@
 
 .category-list {
     padding-bottom: 10px;
+
     .table {
         thead {
             tr {
@@ -54,11 +55,13 @@
             li {
                 float: left;
                 list-style: none;
+
                 .btn {
                     color: $dashboard-primary;
                     font-size: 13px;
                     border-radius: 0;
                     padding: 5px 10px;
+
                     // border-right: 1px solid #fff;
                     // background: $dashboard-primary;
                     background: #fff;

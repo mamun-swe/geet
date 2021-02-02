@@ -1,15 +1,7 @@
 @import "../../../App.scss";
 
+// Category Index
 .category-index {
-    .col-padding {
-        padding: 10px;
-
-        @media (min-width: 992px) {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    }
-
     .float-btn {
         position: fixed;
         right: 30px;
@@ -17,5 +9,32 @@
         padding: 6px;
         color: #fff;
         background: $dashboard-primary;
+    }
+}
+
+// Category create
+.category-create {
+    form {
+        p {
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .form-control {
+            font-size: 14px;
+            min-height: 43px;
+        }
+
+        .form-control:focus {
+            border: 1px solid $muted;
+        }
+
+        .btn {
+            color: #fff;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 30px;
+            background: $dashboard-primary;
+        }
     }
 }
