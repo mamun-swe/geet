@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { Icon } from 'react-icons-kit'
 import { ic_remove_red_eye, ic_edit, ic_delete_forever } from 'react-icons-kit/md'
 import { Link } from 'react-router-dom'
 
 const Index = ({ categories }) => {
+    const [totalPage] = useState([...Array(10).keys()])
+
+
     return (
         <div className="category-list">
             <table className="table table-responsive-lg table-borderless">
@@ -60,6 +63,18 @@ const Index = ({ categories }) => {
                     )}
                 </tbody>
             </table>
+
+            <div className="pageination-items pl-2">
+                {totalPage.map((i) => {
+                    return (
+                        <ul>
+                            <li>
+                                <button type="button" className="btn shadow-none">{i + 1}</button>
+                            </li>
+                        </ul>
+                    )
+                })}
+            </div>
         </div>
     );
 };

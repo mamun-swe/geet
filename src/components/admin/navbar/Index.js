@@ -24,7 +24,7 @@ const Index = ({ notifications, messages, toggle }) => {
                                     <Icon icon={ic_notifications} size={20} style={{ color: '#000' }} />
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu className="shadow-sm">
+                                <Dropdown.Menu className="shadow">
 
                                     <div className="dropdown-body">
                                         {notifications && notifications.length > 0 ?
@@ -64,7 +64,7 @@ const Index = ({ notifications, messages, toggle }) => {
                                     <Icon icon={ic_mail} size={20} style={{ color: '#000' }} />
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu className="shadow-sm">
+                                <Dropdown.Menu className="shadow">
                                     <div className="dropdown-body">
                                         {messages && messages.length > 0 ?
                                             messages.slice(0, 3).map((message, i) =>

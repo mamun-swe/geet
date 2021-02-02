@@ -1,6 +1,7 @@
 @import "../../../App.scss";
 
 .category-list {
+    padding-bottom: 10px;
     .table {
         thead {
             tr {
@@ -39,6 +40,29 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    // Pageination
+    .pageination-items {
+        ul {
+            padding: 0;
+            margin: 0 auto;
+
+            li {
+                float: left;
+                list-style: none;
+                .btn {
+                    color: $dashboard-primary;
+                    font-size: 13px;
+                    border-radius: 0;
+                    padding: 5px 10px;
+                    // border-right: 1px solid #fff;
+                    // background: $dashboard-primary;
+                    background: #fff;
+                    border: 1px solid $muted;
                 }
             }
         }
