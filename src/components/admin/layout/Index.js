@@ -10,8 +10,9 @@ import {
     ic_library_music,
     ic_queue_music,
     ic_people,
-    ic_language,
-    ic_keyboard_arrow_right
+    // ic_language,
+    // ic_account_circle,
+    // ic_keyboard_arrow_right
 } from 'react-icons-kit/md'
 import { standby } from 'react-icons-kit/iconic'
 
@@ -21,7 +22,7 @@ import { handleError } from '../../../utils/Error'
 const Layout = () => {
     const history = useHistory()
     const [show, setShow] = useState(false)
-    const [isMenu, setMenu] = useState(false)
+    // const [isMenu, setMenu] = useState(false)
     const [isLogout, setLogout] = useState(false)
     const [notifications, setNotifications] = useState([])
     const [messages, setMessages] = useState([])
@@ -46,15 +47,15 @@ const Layout = () => {
     }, [])
 
     // Toggle menu
-    const toggleMenu = event => {
-        let current = event.target.getAttribute("data-value")
+    // const toggleMenu = event => {
+    //     let current = event.target.getAttribute("data-value")
 
-        if (isMenu === current) {
-            setMenu(false)
-        } else {
-            setMenu(current)
-        }
-    }
+    //     if (isMenu === current) {
+    //         setMenu(false)
+    //     } else {
+    //         setMenu(current)
+    //     }
+    // }
 
     // Logout
     const doLogout = () => {
@@ -106,7 +107,7 @@ const Layout = () => {
                         <li>
                             <NavLink
                                 exact
-                                to="/admin/albums"
+                                to="/admin/album"
                                 activeClassName="isActive"
                                 type="button"
                                 className="btn shadow-none"
@@ -117,7 +118,7 @@ const Layout = () => {
                         <li>
                             <NavLink
                                 exact
-                                to="/admin/songs"
+                                to="/admin/song"
                                 activeClassName="isActive"
                                 type="button"
                                 className="btn shadow-none"
@@ -128,14 +129,14 @@ const Layout = () => {
                         <li>
                             <NavLink
                                 exact
-                                to="/admin/singers"
+                                to="/admin/singer"
                                 activeClassName="isActive"
                                 type="button"
                                 className="btn shadow-none"
                             ><Icon icon={ic_people} size={20} />Singer</NavLink>
                         </li>
                         {/* Accounts */}
-                        <li>
+                        {/* <li>
                             <div className="sidebar-dropdown-container">
                                 <button
                                     type="button"
@@ -143,7 +144,7 @@ const Layout = () => {
                                     onClick={toggleMenu}
                                     data-value="accounts"
                                 >
-                                    <Icon icon={ic_language} size={20} />Accounts
+                                    <Icon icon={ic_account_circle} size={20} />Accounts
                                 <Icon icon={ic_keyboard_arrow_right} size={25} className={isMenu === 'accounts' ? "arrow down" : "arrow"} />
                                 </button>
 
@@ -185,7 +186,7 @@ const Layout = () => {
                                     >Wallet management</NavLink>
                                 </div>
                             </div>
-                        </li>
+                        </li> */}
 
                         {/* Logout */}
                         <li>

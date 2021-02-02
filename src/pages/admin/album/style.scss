@@ -1,0 +1,21 @@
+@import "../../../App.scss";
+
+.album-index {
+    .col-padding {
+        padding: 10px;
+
+        @media (min-width: 992px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    .float-btn {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        padding: 6px;
+        color: #fff;
+        background: $dashboard-primary;
+    }
+}
